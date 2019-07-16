@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HRPortal.Models.Employee>
+
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@DateTime.Now.ToString()</h1>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.employeename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nric)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salary)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nric)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.employeeid }) |
+                @Html.ActionLink("Details", "Details", new { id=item.employeeid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.employeeid })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

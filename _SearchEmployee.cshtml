@@ -1,0 +1,36 @@
+﻿@model HRPortal.Models.Employee
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employeename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nric)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nric)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.employeeid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

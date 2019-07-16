@@ -1,0 +1,45 @@
+﻿@model HRPortal.Models.Employee
+
+@using (Ajax.BeginForm("_SeachEmployee",
+                             new AjaxOptions { UpdateTargetId = "content-data" }))
+{
+<div id="content-data">
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.employeename)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.employeename)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nric)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nric)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.salary)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.salary)
+            </dd>
+
+        </dl>
+    </div>
+
+
+    <div>
+        @Html.Action("_InputSearch", "Employees")
+    </div>
+
+</div>
+
+}

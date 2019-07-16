@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "DisplayAllEmployeesFromWebAPI";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h1>Employee Details:</h1>
+<p>Employee ID:</p>
+<h1 id="empId"></h1>
+<p>Emp Name:</p>
+<h1 id="empName"></h1>
+<p>Nric:</p>
+<h1 id="NRIC"></h1>
+<p>Salary:</p>
+<h1 id="Salary"></h1>
+
+
+<script>
+        $(document).ready(function () {
+             $.ajax({
+                 url: "http://localhost:57168/api/EmloyeesCloudData/1001"
+             }).then(function (data) {
+                 $('#empId').append(data.employeeid);
+                 $('#empName').append(data.employeename);
+                 $('#NRIC').append(data.nric);
+                 $('#Salary').append(data.salary);
+             });
+         });
+</script>
+
+
+
+

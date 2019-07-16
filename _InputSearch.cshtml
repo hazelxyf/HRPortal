@@ -1,0 +1,6 @@
+﻿@model HRPortal.Models.Employee
+@Html.ValidationSummary(true)
+<div>
+     Enter Employee Id: @Html.EditorFor(model => model.employeeid)
+    <input type="submit" value="Search" />
+</div>

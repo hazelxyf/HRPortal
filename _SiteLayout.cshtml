@@ -1,0 +1,43 @@
+﻿<head>
+    <title>@ViewBag.pageTitle</title>
+    <link href="~/Style/PortalStyle.css" rel="stylesheet" />
+    <link href="~/Style/PrintStyle.css" rel="stylesheet" media="print" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+    </script>
+</head>
+<body>
+     <header class="hidewhenprint">
+        <img src="~/Images/flower.JPG" />
+        <p>Employee Management Portal</p>
+
+    </header>
+    <nav class="hidewhenprint">
+        Menu: @Html.MvcSiteMap().Menu(false, false, true)
+        Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
+    </nav>
+    <section id="accordion">
+        <h1>Employee Profile</h1>
+        <section>
+            @RenderBody()
+        </section>
+        <h1>Message from the CEO</h1>
+        <section>
+            <p>
+                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                suscipit faucibus urna.
+            </p>
+        </section>
+    </section>
+    <footer class="hidewhenprint">
+        <h1>Contact Info: Email: Ntuc@support.com Number: +85123456</h1>
+        <h1>No Of Visitors: @ViewBag.visitors</h1>
+     </footer>
+</body>
